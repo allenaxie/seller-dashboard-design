@@ -1,4 +1,19 @@
-.tabPane1 {
+.imageTabsContainer {
+    position: fixed;
+    width: 40%;
+    height: 80%;
+
+
+}
+
+.tabPane1, .tabPane2 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.imageSkeleton {
+    margin-bottom: 3rem;
 }

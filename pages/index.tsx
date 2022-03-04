@@ -24,10 +24,10 @@ const Home: NextPage = () => {
         <Navbar/>
       </Header>
       <Row className={classes.content}>
-        <Col span={12}>
-          <ImageGallery/>
+        <Col span={12} className={classes.imageGalleryCol}>
+          <ImageGallery />
         </Col>
-        <Col span={12}>
+        <Col span={12} className={classes.productFormCol}>
           <ProductForm/>
         </Col>
       </Row>
