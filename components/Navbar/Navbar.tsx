@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <>
             <Menu theme="dark" mode="horizontal" className={classes.menu}>
-                <Menu.Item>
+                <Menu.Item className={classes.logo}>
                     <Link href="/">
                         LOGO
                     </Link>

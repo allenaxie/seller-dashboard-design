@@ -2,6 +2,12 @@
     width: 100%;
 }
 
+.logo {
+    margin-right: 2rem;
+    padding-left: 0 !important;
+    pointer-events: none;
+}
+
 .avatar {
     position: absolute !important;
     top: 10;
