@@ -101,7 +101,7 @@ const ProductForm = () => {
                 required
             >
                 <Input
-                    placeholder="Add more informationa bout the product"
+                    placeholder="Add more information about the product"
                     maxLength={200}
                     showCount
                 />
@@ -178,13 +178,12 @@ const ProductForm = () => {
                 className={classes.declaration}
                 label={<span className={classes.formLabel}>Declaration</span>}
                 name="declaration"
+                required
             >
-            </Form.Item>
-            <Form.Item>
                 <Checkbox>I hereby declare that the information given in this application is true and correct to the best of my knwoeldge and belief. In case any information given in this application proves to be false or incorrect, I shall be responsible for the consequences.</Checkbox>
             </Form.Item>
             <Row>
-                <span>*</span> indicates required
+                <span className={classes.asterisk}>*</span>&nbsp; indicates required
             </Row>
             <Row className={classes.buttonGroup}>
                 <Button className={classes.cancelBtn}>Cancel</Button>
