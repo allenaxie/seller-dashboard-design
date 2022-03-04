@@ -29,7 +29,7 @@ const ProductForm = () => {
             layout="vertical"
         >
             <Form.Item
-                label="Product Name"
+                label={<span className={classes.formLabel}>Product Name</span>}
                 name="productName"
                 rules={[{
                     required: true, message: 'Please input the product name.'
@@ -40,13 +40,14 @@ const ProductForm = () => {
             <Row>
                 <Col span={12}>
                     <Form.Item
-                        label="Category"
+                        label={<span className={classes.formLabel}>Category</span>}
                         name="category"
                         required
                     >
                         <Radio.Group
                             value={categoryForm}
                             onChange={handleCategoryChange}
+                            className={classes.radioGroup}
                         >
                             <Radio.Button value="Collectibles">Collectibles</Radio.Button>
                             <Radio.Button value="Accessories">Accessories</Radio.Button>
@@ -55,9 +56,9 @@ const ProductForm = () => {
 
                     </Form.Item>
                 </Col>
-                <Col span={12}>
+                <Col span={10} className={classes.thumbnailContainer}>
                     <Form.Item
-                        label="Thumbnail Image"
+                        label={<span className={classes.formLabel}>Thumbnail Image</span>}
                         name="thumbnailImage"
                         required
                     >
@@ -69,7 +70,7 @@ const ProductForm = () => {
                 </Col>
             </Row>
             <Form.Item
-                label="Brand (up to 2)"
+                label={<span className={classes.formLabel}>Brand (up to 2)</span>}
                 name="brand"
                 required
             >
@@ -79,7 +80,7 @@ const ProductForm = () => {
 
             </Form.Item>
             <Form.Item
-                label="Description"
+                label={<span className={classes.formLabel}>Description</span>}
                 name="description"
                 required
             >
@@ -91,10 +92,11 @@ const ProductForm = () => {
 
             </Form.Item>
             <Form.Item
-                label="Condition"
+                label={<span className={classes.formLabel}>Condition</span>}
                 name="condition"
+                className={classes.condition}
             >
-                <Radio.Group >
+                <Radio.Group className={classes.radioGroup}>
                     <Radio.Button value="Bad">Bad</Radio.Button>
                     <Radio.Button value="Fair">Fair</Radio.Button>
                     <Radio.Button value="Good">Good</Radio.Button>
@@ -104,7 +106,7 @@ const ProductForm = () => {
             <Row>
                 <Col span={12}>
                     <Form.Item
-                        label="Season"
+                        label={<span className={classes.formLabel}>Season</span>}
                         name="season"
                     >
                         <Input
@@ -113,10 +115,10 @@ const ProductForm = () => {
 
                     </Form.Item>
                 </Col>
-                <Col span={12}>
+                <Col span={10} offset={1}>
                     <Form.Item
                         className={classes.releaseDate}
-                        label="Release Date"
+                        label={<span className={classes.formLabel}>Release Date</span>}
                         name="releaseDate"
                     >
                         <DatePicker
@@ -128,7 +130,7 @@ const ProductForm = () => {
             <Row>
                 <Col span={12}>
                     <Form.Item
-                        label="Dimensions"
+                        label={<span className={classes.formLabel}>Dimensions</span>}
                         name="dimensions"
                     >
                         <Input
@@ -137,10 +139,10 @@ const ProductForm = () => {
 
                     </Form.Item>
                 </Col>
-                <Col span={12}>
+                <Col span={10} offset={1}>
                     <Form.Item
                         className={classes.retail}
-                        label="Retail"
+                        label={<span className={classes.formLabel}>Retail</span>}
                         name="retail"
                     >
                         <Input
@@ -151,14 +153,14 @@ const ProductForm = () => {
             </Row>
             <Form.Item
                 className={classes.authenticity}
-                label="Authenticity"
+                label={<span className={classes.formLabel}>Authenticity</span>}
                 name="authenticity"
             >
                 <Slider marks={sliderMarks} step={10} defaultValue={100} />
             </Form.Item>
             <Form.Item
                 className={classes.declaration}
-                label="Declaration"
+                label={<span className={classes.formLabel}>Declaration</span>}
                 name="declaration"
             >
             </Form.Item>
@@ -168,9 +170,9 @@ const ProductForm = () => {
             <Row>
                 <span>*</span> indicates required
             </Row>
-            <Row>
-                <Button>Cancel</Button>
-                <Button>Publish</Button>
+            <Row className={classes.buttonGroup}>
+                <Button className={classes.cancelBtn}>Cancel</Button>
+                <Button className={classes.publishBtn}>Publish</Button>
             </Row>
         </Form>
     )
