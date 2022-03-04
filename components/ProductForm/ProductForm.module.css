@@ -13,6 +13,10 @@
     justify-content: flex-end;
 }
 
+.thumbnailText {
+    margin: .5rem;
+}
+
 .condition {
     width: 60%;
 }

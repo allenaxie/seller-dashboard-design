@@ -6,6 +6,8 @@ import moment from 'moment';
 
 const ProductForm = () => {
     const [categoryForm, setCategoryForm] = useState('Collectibles');
+    const [fileList, setFileList] = useState([])
+    console.log(fileList)
 
     console.log(categoryForm)
 
@@ -21,6 +23,11 @@ const ProductForm = () => {
         100: '100%',
     }
 
+    function handleUpload ({file}:any) {
+        console.log(file)
+        setFileList([...fileList,file.originFileObj])
+    }
+    
 
     return (
         <Form
@@ -62,9 +69,18 @@ const ProductForm = () => {
                         name="thumbnailImage"
                         required
                     >
-                        <Upload>
-                            <Button icon={<UploadOutlined />}>Add Image</Button>
-                        </Upload>
+                        <Upload.Dragger
+                        action={"http://localhost:3000/"}
+                        listType="picture"
+                        accept=".jpeg, .jpg, .png"
+                        // fileList={fileList}
+                        onChange={handleUpload}
+                        >
+                            {/* <Button icon={<UploadOutlined />}>Add Image</Button> */}
+                            <span className={classes.thumbnailText}>
+                                Click here or drag files to upload
+                            </span>
+                        </Upload.Dragger>
 
                     </Form.Item>
                 </Col>
