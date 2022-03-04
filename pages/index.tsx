@@ -5,7 +5,7 @@ import { Row, Col, Layout} from 'antd';
 import classes from '../styles/Home.module.css';
 import Navbar from '../components/Navbar/Navbar';
 import ImageGallery from '../components/ImageGallery/ImageGallery';
-
+import ProductForm from '../components/ProductForm/ProductForm';
 
 const Home: NextPage = () => {
 
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           <ImageGallery/>
         </Col>
         <Col span={12}>
-          hello
+          <ProductForm/>
         </Col>
       </Row>
      
